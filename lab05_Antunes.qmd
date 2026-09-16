@@ -6,6 +6,53 @@ format: html
 
 # Lab 05
 
+Ao longo desta semana, você deverá desenvolver código em R, utilizando-se de tidyverse, ggplot, leaftlet,
+ggcal e outros pacotes disponibilizados em HTML Widgets para responder uma questão relacionada ao
+conjunto de dados flights. Para tanto, considere os seguintes fatos:
+
+• Cias Aéreas (AIRLINE) possuem diferentes aeronaves (codificadas em TAIL_NUMBER);
+
+• (Exemplo hipotético) No dia 01/01/2015, a aeronave N431WN viaja de BWI para JFK;
+
+• (Exemplo hipotético) No dia 02/01/2015, a aeronave N431WN viaja de JFK para ORD‘;
+
+• E assim sucessivamente. . .
+
+No caso apontado acima, pode-se ver que a aeronave N431WN realizou um trajeto (provavelmente único)
+durante todo o ano de 2015. Nos dias exemplificados, o trajeto foi BWI-JFK-ORD.
+
+Crie uma função que:
+
+a. Receba um valor de TAIL_NUMBER (por exemplo, N431WN);
+
+b. Produza uma tabela (tidy) com todos os trajetos realizados pela aeronave (ordenadas por data e hora,
+contendo todas as colunas do arquivo flights.csv.zip);
+
+c. Produza um mapa que apresente todo o trajeto voado pela aeronave ao longo de todo o ano; o trajeto
+deve ser apresentado de maneira linear no tempo (i.e., segue a sequência do tempo, como no exemplo
+hipotético dado acima);
+
+d. O mapa deve ser decorado com estatísticas do seu interesse (por exemplo, velocidade média do vôo
+como espessura da linha que conecta os aeroportos envolvidos no trajeto);
+
+Observações:
+
+1. A função terá o argumento tail_number e arquivo;
+
+2. O argumento tail_number será o código identificador do avião de interesse (por ex., N431WN);
+
+3. O argumento arquivo será o nome do arquivo com caminho completo (por ex., file.path("dados",
+"flights.csv.zip"));
+
+4. A função se chamará analisa_aeronave;
+
+5. O arquivo deve ser lido por partes;
+
+6. O mapa deve utilizar as coordenadas exatas dos aeroportos envolvidos (presentes no arquivo airports);
+
+7. A função deve retornar uma lista (nomeada) com dois valores: a tabela utilizada para o gráfico e o
+gráfico propriamente dito;
+
 ```{r}
 library(tidyverse)
 library(ggplot2)
